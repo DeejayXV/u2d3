@@ -179,12 +179,12 @@ console.log(eyeColor);
 */
 console.log("******************** Es. 6 *********************");
 let crewMass = 0;
-let x = 0;
-while (x < 10) {
-  crewMass += starWarsCharacters[x].mass;
-  x++;
+let index = 0;
+while (index < starWarsCharacters.length) {
+  crewMass = starWarsCharacters[index].mass;
+  index++;
 }
-console.log("la massa totale del crew è: ", crewMass);
+console.log("la massa totale della crew è: ", crewMass);
 
 /* ESERCIZIO 7
   Crea uno if/else statement per rivelare la tipologia di carico, utilizzando la massa totale, di un'ipotetica astronave contenente i personaggi dell'array "starWarsCharacters".
@@ -197,10 +197,29 @@ console.log("la massa totale del crew è: ", crewMass);
 
   Una volta fatto, modifica la massa di qualche elemento dell'equipaggio e vedi se riesci ad ottenere un messaggio diverso.
 */
-
+console.log("******************** Es. 7 *********************");
+const massaAstronave = 610;
+if (massaAstronave + crewMass <= 500) {
+  console.log("Ship is under loaded");
+} else if (massaAstronave + crewMass > 500 && massaAstronave + crewMass < 700) {
+  console.log("Ship is half loaded");
+} else if (massaAstronave + crewMass >= 700 && massaAstronave + crewMass < 900) {
+  console.log("Warning: Load is over 700");
+} else if (massaAstronave + crewMass >= 900 && massaAstronave + crewMass < 1000) {
+  console.log("Critical Load: Over 900");
+} else if (massaAstronave + crewMass >= 1000) {
+  console.log("DANGER! OVERLOAD ALERT: escape from ship now!");
+}
 /* ESERCIZIO 8
   Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi effettuare la riassegnazione del valore corrispondente o creare un nuovo array)
 */
+console.log("******************** Es. 8 *********************");
+for (let index = 0; index < starWarsCharacters.length; index++) {
+  if (starWarsCharacters[index].gender === "n/a") {
+    starWarsCharacters[index].gender = "robot";
+  }
+}
+console.log(starWarsCharacters);
 
 /* --EXTRA-- ESERCIZIO 9
   Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "charactersNames" le stringhe corrispondenti a personaggi con lo stesso nome.
